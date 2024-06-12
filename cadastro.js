@@ -11,7 +11,8 @@ import {
     Viewsign, 
     Header, 
     BackButton, 
-    BackButtonImage 
+    BackButtonImage ,
+    Image
 } from "./styles";
 
 export default function Cadastro() {
