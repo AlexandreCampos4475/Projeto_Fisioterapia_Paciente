@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { 
     Container, 
@@ -12,11 +12,22 @@ import {
     Header, 
     BackButton, 
     BackButtonImage ,
-    Image
+    Image,
+    FakeInput,
+    Botaomf,
+    Falsoinputtexto,
+    Containerbotao,
+    Textomf
 } from "./styles";
 
 export default function Cadastro() {
     const navigation = useNavigation();
+
+    const [generoselect, setgenero] = useState('');
+
+    const selectGenero = (generomf) => {
+        setgenero(generomf);
+    };
 
     return (
         <Container>
@@ -41,7 +52,19 @@ export default function Cadastro() {
                     <TextInput placeholder='Password: ***************' secureTextEntry={true} />
                     <TextInput placeholder='Confirm password: ***************' secureTextEntry={true} />
                     <TextInput placeholder='Data de Nascimento: 00/00/0000' />
-                    <TextInput placeholder='Sexo: ' />
+                    
+                    <FakeInput>
+                        <Falsoinputtexto>Sexo:</Falsoinputtexto>
+                        <Containerbotao>
+                            <Botaomf selected={generoselect === 'M'} onPress={() => selectGenero('M')}>
+                                <Textomf selected={generoselect === 'M'}>M</Textomf>
+                            </Botaomf>
+                            <Botaomf selected={generoselect === 'F'} onPress={() => selectGenero('F')}>
+                                <Textomf selected={generoselect === 'F'}>F</Textomf>
+                            </Botaomf>
+                        </Containerbotao>
+                    </FakeInput>
+                    
                     <TextInput placeholder='Profissão: ' />
                     <TextInput placeholder='Telefone: (61) 9 9999-9999' />
                     <TextInput placeholder='Estado Civil: ' />

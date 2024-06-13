@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import {Viewazul, Viewbranco,Viewtopo,Viewbotao, Botaoopcao ,Opcaoimage,Textohome,Logoiesgo ,Textofisio,Botaoservico, Textobotao,Imagembotao,} from './styles';
+import {Viewazul, Viewbranco,Viewtopo,Viewbotao, Botaoopcao ,Opcaoimage,Textohome,Logoiesgo ,Textofisio,Botaoservico, Textobotao,Imagembotao,Textohomebranco,} from './styles';
 
 export default function Home() {
     const navigation = useNavigation();
@@ -8,33 +8,34 @@ export default function Home() {
         <Viewazul>
             <Viewtopo>
             <Botaoopcao>
-            <Opcaoimage />
-            <Textohome>Olá,Paciente</Textohome>
+            <Opcaoimage source={require('./img/Opcao2.png')}/>
+            </Botaoopcao>
+            <Textohome>Olá, Paciente</Textohome>
             <Logoiesgo source={require('./img/Logo_iesgo.png')} />
             <Textofisio>Fisioterapia</Textofisio>
-            </Botaoopcao>
+        
 
             </Viewtopo>
         <Viewbranco>
-        <Textohome>O que você precisa hoje? </Textohome>
+        <Textohomebranco>O que você precisa hoje? </Textohomebranco>
         <Viewbotao>
         <Botaoservico>
-        <Imagembotao/>
+        <Imagembotao source ={require('./img/Calendar2.png')}/>
         <Textobotao>Solicitar Atendimento</Textobotao>
         </Botaoservico>
 
         <Botaoservico>
-        <Imagembotao source={require('./img/Agendamento.png')} />
+        <Imagembotao source={require('./img/Agendamento3.png')} />
         <Textobotao>Meus Agendamentos</Textobotao>
         </Botaoservico>
 
         <Botaoservico>
-        <Imagembotao source={require('./img/Suporte.png')} />
+        <Imagembotao source={require('./img/Suporte2.png')} />
         <Textobotao>Suporte</Textobotao>
         </Botaoservico>
 
         <Botaoservico>
-        <Imagembotao source={require('./img/Perfil.png')} />
+        <Imagembotao source={require('./img/Perfil2.png')} />
         <Textobotao>Meu Perfil</Textobotao>
         </Botaoservico>
 

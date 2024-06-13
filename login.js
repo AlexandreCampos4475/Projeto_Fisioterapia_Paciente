@@ -22,7 +22,7 @@ export default function Login() {
       <Viewsign>
         <Textsignup>Don't have an account? </Textsignup> 
         <Signup onPress={() => navigation.navigate('Cadastro')}>
-          <Textsignup style={{ color: '#00005D', fontWeight: 'bold', fontSize: 12 }}>Sign up</Textsignup>
+          <Textsignup style={{ color: '#00005D', fontFamily:'Inter-Bold', fontSize: 14 }}>Sign up</Textsignup>
         </Signup>
       </Viewsign>
     </Container>
