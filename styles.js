@@ -1,8 +1,35 @@
 import styled from "styled-components/native";
 import {Platform} from 'react-native';
+import { Picker } from "@react-native-picker/picker";
 
+// drawer syled
 
+export const DrawerButton = styled.TouchableOpacity`
+  width: 90%;
+  height: 50px;
+  margin: 10px 5%;
+  background-color: #fff;
+  border-radius: 10px;
+  justify-content: center;
+  padding-left: 10px;
+  elevation: 3;
+`;
 
+export const DrawerButtonText = styled.Text`
+  font-size: 16px;
+  color: #000000;
+  font-family:'Lato-Regular';
+`;
+export const CloseButton = styled.TouchableOpacity`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+`;
+export const FecharTexto = styled.Text`
+  font-size: 30px;
+  color: #000000;
+  font-family:'Lato-Regular';
+`;
 
 // styles usada na pagina: Login e cadastro
 export const Container = styled.View`
@@ -43,6 +70,7 @@ export const TextInput = styled.TextInput`
   box-shadow: 0px 2px 4px #00000040;
   elevation: 5;
   font-family:'Inter-Regular';
+  font-style: italic;
 `;
 
 export const LoginButton = styled.TouchableOpacity`
@@ -147,6 +175,48 @@ export const Textomf = styled.Text`
   font-family:'Inter-Regular';
 `;
 
+export const EspacoPicker= styled.View`
+  height: 40px;
+  width: 100%;
+  border-width: 1px;
+  border-color: #ccc;
+  margin-bottom: 20px;
+  padding-left: 100px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px #00000040;
+  elevation: 5;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-style:'bold';
+  
+`
+export const Estadocivil= styled(Picker)`
+ height: 40px;
+  width: 100%;
+  font-family: 'Inter-Regular';
+  align-items: center;
+  
+  
+`
+export const PickerTexto= styled.Text`
+ position: absolute;
+  left: 3px;
+  top: 5px;
+  font-size: 15px;
+  color: #565656;
+  background-color: #fff;
+  padding: 5px 10px;
+  font-style: italic;
+`
+export const PickerItem = styled(Picker.Item)`
+
+  align-self: center;
+ 
+`;
 
 //styles usada para Login
 
@@ -218,8 +288,11 @@ export const Imagembotao = styled.Image`
 `;
 
 export const Imagemperfil = styled.Image`
+  position:relative;
+  left:150px;
   width: 45px;
   height: 45px;
+  border-radius: 20px;
 `;
 
 export const Botaoservico = styled.TouchableOpacity`
@@ -271,20 +344,9 @@ export const Textofisio = styled.Text`
   font-family:'Inter-Bold';
 `;
 
-// drawer syled
 
-export const DrawerButton = styled.TouchableOpacity`
-  width: 200px;
-  height: 50px;
-  background-color: #333;
-  justify-content: center;
-  align-items: center;
-  border-radius: 25px;
-  margin-bottom: 10px;
-`;
-
-export const DrawerButtonText = styled.Text`
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-`;
+export const DrawerItem = ({ title, onPress }) => (
+  <DrawerButton onPress={onPress}>
+    <DrawerButtonText>{title}</DrawerButtonText>
+  </DrawerButton>
+);

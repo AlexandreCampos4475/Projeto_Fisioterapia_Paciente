@@ -1,16 +1,17 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import {Viewazul, Viewbranco,Viewtopo,Viewbotao, Botaoopcao ,Opcaoimage,Textohome,Logoiesgo ,Textofisio,Botaoservico, Textobotao,Imagembotao,Textohomebranco,} from './styles';
+import {Viewazul, Viewbranco,Viewtopo,Viewbotao, Botaoopcao ,Opcaoimage,Textohome,Logoiesgo ,Textofisio,Botaoservico, Textobotao,Imagembotao,Textohomebranco,Imagemperfil} from './styles';
 
 export default function Home() {
     const navigation = useNavigation();
     return(
         <Viewazul>
             <Viewtopo>
-            <Botaoopcao>
+            <Botaoopcao onPress={( )=> navigation.openDrawer()}>
             <Opcaoimage source={require('./img/Opcao2.png')}/>
             </Botaoopcao>
             <Textohome>Olá, Paciente</Textohome>
+            <Imagemperfil source={require('./img/Foto.png')} ></Imagemperfil>
             <Logoiesgo source={require('./img/Logo_iesgo.png')} />
             <Textofisio>Fisioterapia</Textofisio>
         

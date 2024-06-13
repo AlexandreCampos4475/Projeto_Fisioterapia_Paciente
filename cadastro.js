@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { Picker } from "@react-native-picker/picker";
 import { 
     Container, 
     TextLogin, 
@@ -17,17 +18,21 @@ import {
     Botaomf,
     Falsoinputtexto,
     Containerbotao,
-    Textomf
+    Textomf,
+    Estadocivil,
+    EspacoPicker,
+    PickerTexto,
+    PickerItem
 } from "./styles";
 
 export default function Cadastro() {
     const navigation = useNavigation();
 
     const [generoselect, setgenero] = useState('');
-
     const selectGenero = (generomf) => {
         setgenero(generomf);
     };
+    const [selectedValue, setSelectedValue] = useState("solteiro");
 
     return (
         <Container>
@@ -67,7 +72,22 @@ export default function Cadastro() {
                     
                     <TextInput placeholder='Profissão: ' />
                     <TextInput placeholder='Telefone: (61) 9 9999-9999' />
-                    <TextInput placeholder='Estado Civil: ' />
+                    
+                    <EspacoPicker>
+                        <PickerTexto>Estado Civil: </PickerTexto>
+                    <Estadocivil
+       selectedValue={selectedValue}
+       onValueChange={(itemValue) => setSelectedValue(itemValue)}
+    
+      >
+        <PickerItem label="Solteiro" value="solteiro" />
+        <PickerItem label="Casado" value="casado" />
+        <PickerItem label="Separado" value="separado" />
+        <PickerItem label="Divorciado" value="divorciado" />
+        <PickerItem label="Viúvo" value="viuvo" />
+      </Estadocivil>
+      </EspacoPicker>
+      
                 </Input>
 
                 <LoginButton>
