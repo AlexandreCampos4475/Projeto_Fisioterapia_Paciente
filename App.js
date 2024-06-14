@@ -5,6 +5,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Login from './login';
 import Cadastro from './cadastro';
 import Home from './Home'
+import MeusAgendamentos from "./meusAgendamentos";
+import VisualizarRelatorio from './VisualizarRelatorio';
+import CancelarAgendamento from './CancelarAgendamento';
+import Atendimento from "./atendimento";
+import Perfil from "./Perfil";
 import { View } from 'react-native';
 import { DrawerItem, CloseButton,FecharTexto } from "./styles"; 
 import * as Font from 'expo-font';
@@ -42,13 +47,7 @@ const Drawer = createDrawerNavigator();
       </View>
     );
   }
-  function InfomedicaTela({ navigation }) {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Button onPress={() => navigation.goBack()} title="Go back home" />
-      </View>
-    );
-  }
+
   function PerfilTela({ navigation }) {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -61,11 +60,10 @@ const Drawer = createDrawerNavigator();
       <View style={{ flex: 1, paddingTop: 60 }}>
         <CloseButton onPress={() => navigation.closeDrawer()}><FecharTexto>X</FecharTexto></CloseButton>
         <DrawerItem title="Home" onPress={() => navigation.navigate('Home')} />
-        <DrawerItem title="Solicitar Atendimento" onPress={() => navigation.navigate('Solicitar Atendimento')} />
+        <DrawerItem title="Solicitar Atendimento" onPress={() => navigation.navigate('Atendimento')} />
         <DrawerItem title="Suporte" onPress={() => navigation.navigate('Suporte')} />
-        <DrawerItem title="Meus Agendamentos" onPress={() => navigation.navigate('Meus Agendamentos')} />
-        <DrawerItem title="Informações Médicas" onPress={() => navigation.navigate('Informações Médicas')} />
-        <DrawerItem title="Meu Perfil" onPress={() => navigation.navigate('Meu Perfil')} />
+        <DrawerItem title="Meus Agendamentos" onPress={() => navigation.navigate('MeusAgendamentos')} />
+        <DrawerItem title="Meu Perfil" onPress={() => navigation.navigate('Perfil')} />
       </View>
     );
   }
@@ -74,10 +72,9 @@ const Drawer = createDrawerNavigator();
     return (
       <Drawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} />}>
         <Drawer.Screen name="HomeScreen" component={Home} options={{headerShown: false}} />
-        <Drawer.Screen name="Solicitar Atendimento" component={SolicitarTela} />
+        <Drawer.Screen name="Solicitar Atendimento" component={MeusAgendamentos} />
         <Drawer.Screen name="Suporte" component={SuporteTela} />
         <Drawer.Screen name="Meus Agendamentos" component={AgendamentosTela} />
-        <Drawer.Screen name="Informações Médicas" component={InfomedicaTela} />
         <Drawer.Screen name="Meu Perfil" component={PerfilTela} />
       </Drawer.Navigator>
     );
@@ -117,7 +114,33 @@ export default function App() {
                 component={DrawerNavigator}
                 options={{headerShown: false}}
                 />
+                 <Stack.Screen 
+               name="MeusAgendamentos"
+                component={MeusAgendamentos}
+                options={{ headerShown: false }}  />
+                <Stack.Screen 
+                name="VisualizarRelatorio" 
+                component={VisualizarRelatorio}
+                options={{ headerShown: false }}  />
+
+                <Stack.Screen
+                 name="CancelarAgendamento"
+                  component={CancelarAgendamento} 
+                  options={{ headerShown: false }} />
+                   <Stack.Screen
+                 name="Atendimento"
+                  component={Atendimento} 
+                  options={{ headerShown: false }} />
+                  <Stack.Screen
+                 name="Perfil"
+                  component={Perfil} 
+                  options={{ headerShown: false }} />
+
+                  
             </Stack.Navigator>
+            
+
+            
             
     
        

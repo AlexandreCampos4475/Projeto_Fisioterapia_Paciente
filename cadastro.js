@@ -90,8 +90,8 @@ export default function Cadastro() {
       
                 </Input>
 
-                <LoginButton>
-                    <LoginButtonText>Sign up</LoginButtonText>
+                <LoginButton onPress={()=> navigation.navigate('Login')}>
+                    <LoginButtonText >Sign up</LoginButtonText>
                 </LoginButton>
 
                 <Viewsign />

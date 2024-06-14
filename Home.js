@@ -11,7 +11,7 @@ export default function Home() {
             <Opcaoimage source={require('./img/Opcao2.png')}/>
             </Botaoopcao>
             <Textohome>Olá, Paciente</Textohome>
-            <Imagemperfil source={require('./img/Foto.png')} ></Imagemperfil>
+            <Imagemperfil onPress={()=> navigation.navigate('Perfil')}source={require('./img/Foto.png')} ></Imagemperfil>
             <Logoiesgo source={require('./img/Logo_iesgo.png')} />
             <Textofisio>Fisioterapia</Textofisio>
         
@@ -20,12 +20,12 @@ export default function Home() {
         <Viewbranco>
         <Textohomebranco>O que você precisa hoje? </Textohomebranco>
         <Viewbotao>
-        <Botaoservico>
+        <Botaoservico onPress={()=> navigation.navigate('Atendimento')}>
         <Imagembotao source ={require('./img/Calendar2.png')}/>
         <Textobotao>Solicitar Atendimento</Textobotao>
         </Botaoservico>
 
-        <Botaoservico>
+        <Botaoservico onPress={() => navigation.navigate('MeusAgendamentos')}>
         <Imagembotao source={require('./img/Agendamento3.png')} />
         <Textobotao>Meus Agendamentos</Textobotao>
         </Botaoservico>
@@ -35,7 +35,7 @@ export default function Home() {
         <Textobotao>Suporte</Textobotao>
         </Botaoservico>
 
-        <Botaoservico>
+        <Botaoservico onPress={() => navigation.navigate('Perfil')}>
         <Imagembotao source={require('./img/Perfil2.png')} />
         <Textobotao>Meu Perfil</Textobotao>
         </Botaoservico>
